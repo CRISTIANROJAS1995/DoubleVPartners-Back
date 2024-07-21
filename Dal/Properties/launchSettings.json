@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Dal": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "SENDGRID_KEY": ""
+      }
+    }
+  }
+}
