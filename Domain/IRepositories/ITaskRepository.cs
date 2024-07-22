@@ -17,5 +17,9 @@ namespace Domain.IRepositories
         Task<Tarea?> ByName(string name);
         Task<Tarea?> ByIdentifier(string identifier);
         Task<Usuario?> ByUserIdentifier(string identifier);
+        Task<int?> AddAssignTask(AsignacionTarea model);
+        Task<AsignacionTarea?> ValidAssignTask(string identifierUser, string identifierTask);
+        Task<List<AsignacionTareaDto>?> AllAssignTask();
+        Task<List<AsignacionTareaDto>?> ByUserAssignTask(int userId);
     }
 }

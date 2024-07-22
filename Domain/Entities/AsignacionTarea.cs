@@ -21,6 +21,8 @@ namespace Domain.Entities
         [Required]
         public DateTime FechaAsignacion { get; set; }
 
+        public string UsuarioAsignador { get; set; } = string.Empty;
+
 
         [ForeignKey("UsuarioId")]
         public Usuario Usuario { get; set; }

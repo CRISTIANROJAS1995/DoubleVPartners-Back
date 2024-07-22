@@ -91,5 +91,55 @@ namespace API.Controllers
             return Ok(response);
         }
 
+
+        [Authorize(Roles = "Supervisor")]
+        [HttpPost]
+        [Route("Assign/Add")]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(500)]
+        public async Task<IActionResult> AddAssignTask([FromBody] TareaAsignarInput request)
+        {
+            if (request == null)
+            {
+                return BadRequest(ModelState);
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            return Ok(await _taskService.AddAssignTask(request, User.FindFirstValue(ClaimTypes.NameIdentifier)));
+        }
+
+        [Authorize(Roles = "Supervisor")]
+        [HttpGet]
+        [Route("Assign/All")]
+        [ProducesResponseType(200, Type = typeof(List<AsignacionTareaDto>))]
+        [ProducesResponseType(400)]
+        public async Task<IActionResult> AllAssignTask()
+        {
+            var response = await _taskService.AllAssignTask();
+            return Ok(response);
+        }
+
+        [Authorize]
+        [HttpGet]
+        [Route("Assign/Get")]
+        [ProducesResponseType(200, Type = typeof(List<AsignacionTareaDto>))]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(404)]
+        public async Task<IActionResult> Get()
+        {
+            var consult = await _taskService.ByUserAssignTask(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            if (consult == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(consult);
+        }
+
     }
 }

@@ -14,5 +14,9 @@ namespace Domain.IServices
         Task<Tarea?> ByIdentifier(string identifier);
         Task<ResponseApiDto?> ByName(string name);
 
+        Task<ResponseApiDto?> AddAssignTask(TareaAsignarInput request, string usuarioAsignador);
+        Task<List<AsignacionTareaDto>?> AllAssignTask();
+        Task<List<AsignacionTareaDto>?> ByUserAssignTask(string identificador);
+
     }
 }

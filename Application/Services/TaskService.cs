@@ -152,5 +152,85 @@ namespace Application.Services
 
             return response;
         }
+
+
+        #region Asignación de tareas
+
+        public async Task<ResponseApiDto?> AddAssignTask(TareaAsignarInput request, string usuarioAsignador)
+        {
+            var response = new ResponseApiDto();
+
+            var valid = await _taskRepository.ValidAssignTask(request.IdentificadorUsuario, request.IdentificadorTarea);
+            if (valid == null)
+            {
+                var user = await _taskRepository.ByUserIdentifier(request.IdentificadorUsuario);
+                if (user == null)
+                {
+                    response.Result = false;
+                    response.Message = "El usuario no existe.";
+                }
+                else
+                {
+                    var task = await _taskRepository.ByIdentifier(request.IdentificadorTarea);
+                    if (task == null)
+                    {
+                        response.Result = false;
+                        response.Message = "La tarea no existe.";
+                    }
+                    else
+                    {
+                        AsignacionTarea model = new()
+                        {
+                            UsuarioId = user.Id,
+                            TareaId = task.Id,
+                            FechaAsignacion = DateTime.Now,
+                            UsuarioAsignador = usuarioAsignador
+                        };
+
+                        var responseAdd = await _taskRepository.AddAssignTask(model);
+                        if (responseAdd == 1)
+                        {
+                            response.Result = true;
+                        }
+                        else
+                        {
+                            response.Result = false;
+                            response.Message = "Ocurrio un error inesperado al asignar la tarea.";
+                        }
+                    }
+                }
+            }
+            else
+            {
+                response.Result = false;
+                response.Message = "Esta tarea ya fue asignada anteriormente al usuario.";
+            }
+
+            return response;
+        }
+
+        public async Task<List<AsignacionTareaDto>?> AllAssignTask()
+        {
+            return await _taskRepository.AllAssignTask();
+        }
+
+        public async Task<List<AsignacionTareaDto>?> ByUserAssignTask(string identificador)
+        {
+            List<AsignacionTareaDto> response = new List<AsignacionTareaDto>();
+
+            var user = await _taskRepository.ByUserIdentifier(identificador);
+            if (user != null)
+            {
+                var consultData = await _taskRepository.ByUserAssignTask(user.Id);
+                if (consultData != null)
+                {
+                    response.AddRange(consultData);
+                }
+            }
+
+            return response;
+        }
+
+        #endregion
     }
 }
