@@ -48,13 +48,19 @@ builder.Services.AddCors(p => p.AddPolicy("corsapp", builder =>
 }));
 
 builder.Services.AddScoped<IAuthorizationHandler, RoleRequirementHandler>();
+
 builder.Services.AddScoped<IJWTManagerRepository, JWTManagerRepository>();
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+builder.Services.AddScoped<IGenericRepository, GenericRepository>();
+
 builder.Services.AddScoped<IUsuarioService, UsuarioService>();
+builder.Services.AddScoped<IGenericService, GenericService>();
 
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("Administrador", policy => policy.RequireRole("Administrador"));
+    options.AddPolicy("Supervisor", policy => policy.RequireRole("Supervisor"));
+    options.AddPolicy("Empleado", policy => policy.RequireRole("Empleado"));
 });
 
 builder.Services.AddHttpContextAccessor();

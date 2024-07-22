@@ -98,7 +98,7 @@ namespace Dal.Repository
             {
                 RolDto objRole = new RolDto();
                 objRole.Id = consult.Rol.Id;
-                objRole.Name = consult.Rol.Nombre;
+                objRole.Nombre = consult.Rol.Nombre;
 
                 response.Identificador = consult.Identificador;
                 response.Role = objRole;

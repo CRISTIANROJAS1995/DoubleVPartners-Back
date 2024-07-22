@@ -43,7 +43,7 @@ namespace Dal.Repository
                 new Claim(ClaimTypes.NameIdentifier, valid.Identificador),
                 new Claim(ClaimTypes.Name, valid.Nombre!),
                 new Claim(ClaimTypes.Email, request.Email),
-                new Claim(ClaimTypes.Role, valid.Role.Name),
+                new Claim(ClaimTypes.Role, valid.Role.Nombre),
               }),
                 Expires = DateTime.UtcNow.AddMinutes(1440), //24hours
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(tokenKey), SecurityAlgorithms.HmacSha256Signature)
