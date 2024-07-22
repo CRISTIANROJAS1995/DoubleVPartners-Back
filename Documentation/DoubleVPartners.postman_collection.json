@@ -1,0 +1,586 @@
+{
+	"info": {
+		"_postman_id": "a6997a14-fcaf-4837-b59d-e44ea755e0ff",
+		"name": "DoubleVPartners",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3661335"
+	},
+	"item": [
+		{
+			"name": "Gestión de usuarios",
+			"item": [
+				{
+					"name": "Crear",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"user@example.com\",\r\n  \"password\": \"string\",\r\n  \"nombre\": \"string\",\r\n  \"numeroIdentificacion\": \"string\",\r\n  \"telefono\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7198/api/User",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7198",
+							"path": [
+								"api",
+								"User"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJkN2E1NDc2OS05ZTFlLTQwMWItYjU1Ny1jMDFkZWQ5OTJlZGYiLCJ1bmlxdWVfbmFtZSI6InN0cmluZyIsImVtYWlsIjoidXNlckBleGFtcGxlLmNvbSIsInJvbGUiOiJFbXBsZWFkbyIsIm5iZiI6MTcyMTYwNTAwNCwiZXhwIjoxNzIxNjkxNDA0LCJpYXQiOjE3MjE2MDUwMDR9.I0iYQRwQOeK13VQZnkm25DyLp_VFqjFtp_pzoIs38to",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"password\": \"string\",\r\n  \"nombre\": \"string\",\r\n  \"numeroIdentificacion\": \"string\",\r\n  \"telefono\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7198/api/User",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7198",
+							"path": [
+								"api",
+								"User"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar usuario desde admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJjNTAxNmM4NC03M2RmLTRhZDItYmQ4MC01YjdkNGQ2NDAxNjYiLCJ1bmlxdWVfbmFtZSI6InN0cmluZyIsImVtYWlsIjoidXNlcl9hZG1pbkBleGFtcGxlLmNvbSIsInJvbGUiOiJBZG1pbmlzdHJhZG9yIiwibmJmIjoxNzIxNjA1MTk5LCJleHAiOjE3MjE2OTE1OTksImlhdCI6MTcyMTYwNTE5OX0.Din52I7IrOrGcyGsWGld8oy-tNRAzfkb96kExLPArzU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"identificador\": \"d7a54769-9e1e-401b-b557-c01ded992edf\",\r\n  \"rolId\": 0,\r\n  \"password\": \"string\",\r\n  \"nombre\": \"example\",\r\n  \"numeroIdentificacion\": \"string\",\r\n  \"telefono\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7198/api/User/Admin/Update",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7198",
+							"path": [
+								"api",
+								"User",
+								"Admin",
+								"Update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar todos los usuarios",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJjNTAxNmM4NC03M2RmLTRhZDItYmQ4MC01YjdkNGQ2NDAxNjYiLCJ1bmlxdWVfbmFtZSI6InN0cmluZyIsImVtYWlsIjoidXNlcl9hZG1pbkBleGFtcGxlLmNvbSIsInJvbGUiOiJBZG1pbmlzdHJhZG9yIiwibmJmIjoxNzIxNjA1MTk5LCJleHAiOjE3MjE2OTE1OTksImlhdCI6MTcyMTYwNTE5OX0.Din52I7IrOrGcyGsWGld8oy-tNRAzfkb96kExLPArzU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7198/api/User/All",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7198",
+							"path": [
+								"api",
+								"User",
+								"All"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar mi información",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJjNTAxNmM4NC03M2RmLTRhZDItYmQ4MC01YjdkNGQ2NDAxNjYiLCJ1bmlxdWVfbmFtZSI6InN0cmluZyIsImVtYWlsIjoidXNlcl9hZG1pbkBleGFtcGxlLmNvbSIsInJvbGUiOiJBZG1pbmlzdHJhZG9yIiwibmJmIjoxNzIxNjA1MTk5LCJleHAiOjE3MjE2OTE1OTksImlhdCI6MTcyMTYwNTE5OX0.Din52I7IrOrGcyGsWGld8oy-tNRAzfkb96kExLPArzU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7198/api/User",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7198",
+							"path": [
+								"api",
+								"User"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar usuario desde admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJjNTAxNmM4NC03M2RmLTRhZDItYmQ4MC01YjdkNGQ2NDAxNjYiLCJ1bmlxdWVfbmFtZSI6InN0cmluZyIsImVtYWlsIjoidXNlcl9hZG1pbkBleGFtcGxlLmNvbSIsInJvbGUiOiJBZG1pbmlzdHJhZG9yIiwibmJmIjoxNzIxNjA5MDA1LCJleHAiOjE3MjE2OTU0MDUsImlhdCI6MTcyMTYwOTAwNX0.PAMZscl_CRiDi_kgamPckB1CCYiJjM3jJ4KJ7ba69Cg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"identificador\": \"d7a54769-9e1e-401b-b557-c01ded992edf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7198/api/User/Admin/Delete",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7198",
+							"path": [
+								"api",
+								"User",
+								"Admin",
+								"Delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Generico",
+			"item": [
+				{
+					"name": "Consultar todos los roles",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJjNTAxNmM4NC03M2RmLTRhZDItYmQ4MC01YjdkNGQ2NDAxNjYiLCJ1bmlxdWVfbmFtZSI6InN0cmluZyIsImVtYWlsIjoidXNlcl9hZG1pbkBleGFtcGxlLmNvbSIsInJvbGUiOiJBZG1pbmlzdHJhZG9yIiwibmJmIjoxNzIxNjA5MDA1LCJleHAiOjE3MjE2OTU0MDUsImlhdCI6MTcyMTYwOTAwNX0.PAMZscl_CRiDi_kgamPckB1CCYiJjM3jJ4KJ7ba69Cg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7198/api/Generic/Rols",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7198",
+							"path": [
+								"api",
+								"Generic",
+								"Rols"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar todos los estados de tareas",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJjNTAxNmM4NC03M2RmLTRhZDItYmQ4MC01YjdkNGQ2NDAxNjYiLCJ1bmlxdWVfbmFtZSI6InN0cmluZyIsImVtYWlsIjoidXNlcl9hZG1pbkBleGFtcGxlLmNvbSIsInJvbGUiOiJBZG1pbmlzdHJhZG9yIiwibmJmIjoxNzIxNjA5MDA1LCJleHAiOjE3MjE2OTU0MDUsImlhdCI6MTcyMTYwOTAwNX0.PAMZscl_CRiDi_kgamPckB1CCYiJjM3jJ4KJ7ba69Cg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7198/api/Generic/TaskStatus",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7198",
+							"path": [
+								"api",
+								"Generic",
+								"TaskStatus"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Gestión de tareas",
+			"item": [
+				{
+					"name": "Crear",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJjNTAxNmM4NC03M2RmLTRhZDItYmQ4MC01YjdkNGQ2NDAxNjYiLCJ1bmlxdWVfbmFtZSI6InN0cmluZyIsImVtYWlsIjoidXNlcl9hZG1pbkBleGFtcGxlLmNvbSIsInJvbGUiOiJBZG1pbmlzdHJhZG9yIiwibmJmIjoxNzIxNjE0NDEyLCJleHAiOjE3MjE3MDA4MTIsImlhdCI6MTcyMTYxNDQxMn0.ZLlvYrAsqqW0ktZjmr-zwnIPUTJ_3lC_jMnP56jk72M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"estadoTareaId\": 1,\r\n  \"nombre\": \"example\",\r\n  \"descripcion\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7198/api/Task",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7198",
+							"path": [
+								"api",
+								"Task"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar todas las tareas",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJjNTAxNmM4NC03M2RmLTRhZDItYmQ4MC01YjdkNGQ2NDAxNjYiLCJ1bmlxdWVfbmFtZSI6InN0cmluZyIsImVtYWlsIjoidXNlcl9hZG1pbkBleGFtcGxlLmNvbSIsInJvbGUiOiJBZG1pbmlzdHJhZG9yIiwibmJmIjoxNzIxNjE0NDEyLCJleHAiOjE3MjE3MDA4MTIsImlhdCI6MTcyMTYxNDQxMn0.ZLlvYrAsqqW0ktZjmr-zwnIPUTJ_3lC_jMnP56jk72M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7198/api/Task/All",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7198",
+							"path": [
+								"api",
+								"Task",
+								"All"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar tarea",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJjNTAxNmM4NC03M2RmLTRhZDItYmQ4MC01YjdkNGQ2NDAxNjYiLCJ1bmlxdWVfbmFtZSI6InN0cmluZyIsImVtYWlsIjoidXNlcl9hZG1pbkBleGFtcGxlLmNvbSIsInJvbGUiOiJBZG1pbmlzdHJhZG9yIiwibmJmIjoxNzIxNjE0NDEyLCJleHAiOjE3MjE3MDA4MTIsImlhdCI6MTcyMTYxNDQxMn0.ZLlvYrAsqqW0ktZjmr-zwnIPUTJ_3lC_jMnP56jk72M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"identificador\": \"db6bad5f-b93a-4cb8-851a-fac0408a553c\",\r\n  \"estadoTareaId\": 1,\r\n  \"nombre\": \"string\",\r\n  \"descripcion\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7198/api/Task",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7198",
+							"path": [
+								"api",
+								"Task"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar tarea",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJjNTAxNmM4NC03M2RmLTRhZDItYmQ4MC01YjdkNGQ2NDAxNjYiLCJ1bmlxdWVfbmFtZSI6InN0cmluZyIsImVtYWlsIjoidXNlcl9hZG1pbkBleGFtcGxlLmNvbSIsInJvbGUiOiJBZG1pbmlzdHJhZG9yIiwibmJmIjoxNzIxNjE0NDEyLCJleHAiOjE3MjE3MDA4MTIsImlhdCI6MTcyMTYxNDQxMn0.ZLlvYrAsqqW0ktZjmr-zwnIPUTJ_3lC_jMnP56jk72M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"identificador\": \"ae2396c8-4037-4352-8cdc-027e68ef1e76\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7198/api/Task",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7198",
+							"path": [
+								"api",
+								"Task"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Asignar Tareas",
+			"item": [
+				{
+					"name": "Consultas todas las asignaciones de tareas",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIxNTE2ZTlkNy1mNzIyLTQzYTItODRlNC05NDhiNTNiZWI0MjgiLCJ1bmlxdWVfbmFtZSI6InN0cmluZyIsImVtYWlsIjoidXNlcl9zdXBlcnZpc29yQGV4YW1wbGUuY29tIiwicm9sZSI6IlN1cGVydmlzb3IiLCJuYmYiOjE3MjE2MjAwOTMsImV4cCI6MTcyMTcwNjQ5MywiaWF0IjoxNzIxNjIwMDkzfQ.6v_xwWven3KDmRlgPmpygQ-gZb9AkFlnCbzTNWiz_64",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7198/api/Task/Assign/All",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7198",
+							"path": [
+								"api",
+								"Task",
+								"Assign",
+								"All"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar mis asignaciones",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJiMTc4OTBlZC0yZDk0LTQ0MWMtOGZlYi0yNjZjY2Q4YTcyZDkiLCJ1bmlxdWVfbmFtZSI6InN0cmluZyIsImVtYWlsIjoidXNlcl9lbXBsZWFkb0BleGFtcGxlLmNvbSIsInJvbGUiOiJFbXBsZWFkbyIsIm5iZiI6MTcyMTYyMDY5NSwiZXhwIjoxNzIxNzA3MDk1LCJpYXQiOjE3MjE2MjA2OTV9.PuLURfZjAk_q5ZpzZjrjrPNorz7nbDbyw1JUczGqKKw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7198/api/Task/Assign/Get",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7198",
+							"path": [
+								"api",
+								"Task",
+								"Assign",
+								"Get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Asignar una tarea a un usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIxNTE2ZTlkNy1mNzIyLTQzYTItODRlNC05NDhiNTNiZWI0MjgiLCJ1bmlxdWVfbmFtZSI6InN0cmluZyIsImVtYWlsIjoidXNlcl9zdXBlcnZpc29yQGV4YW1wbGUuY29tIiwicm9sZSI6IlN1cGVydmlzb3IiLCJuYmYiOjE3MjE2MjAwOTMsImV4cCI6MTcyMTcwNjQ5MywiaWF0IjoxNzIxNjIwMDkzfQ.6v_xwWven3KDmRlgPmpygQ-gZb9AkFlnCbzTNWiz_64",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"identificadorUsuario\": \"b17890ed-2d94-441c-8feb-266ccd8a72d9\",\r\n  \"identificadorTarea\": \"db6bad5f-b93a-4cb8-851a-fac0408a553c\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7198/api/Task/Assign/Add",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7198",
+							"path": [
+								"api",
+								"Task",
+								"Assign",
+								"Add"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ingresar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"user_admin@example.com\",\r\n  \"password\": \"string\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7198/api/User/Auth",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7198",
+					"path": [
+						"api",
+						"User",
+						"Auth"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
