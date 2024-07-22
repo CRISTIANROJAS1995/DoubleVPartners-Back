@@ -12,6 +12,7 @@ namespace Domain.IServices
         Task<ResponseApiDto?> Add(UsuarioInput request);
         Task<ResponseApiDto?> Update(UsuarioActualizarInput request, string identifier);
         Task<ResponseApiDto?> UpdateToAdmin(UsuarioActualizarAdminInput request);
+        Task<ResponseApiDto?> DeleteToAdmin(string identificador);
         Task<List<UsuarioDto>?> All();
         Task<UsuarioDto> ByIdentifierDto(string identifier);
         Task<Usuario?> ByIdentifier(string identifier);

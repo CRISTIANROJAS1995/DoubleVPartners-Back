@@ -8,6 +8,7 @@ namespace Domain.IRepositories
     {
         Task<int?> Add(Usuario model);
         Task<int?> Update(Usuario model);
+        Task<int?> Delete(Usuario model);
         Task<List<UsuarioDto>?> All();
         Task<Usuario?> ByEmail(string email);
         Task<Usuario?> ByIdentification(string numberIdentification);

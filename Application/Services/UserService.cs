@@ -143,6 +143,33 @@ namespace Application.Services
             return response;
         }
 
+        public async Task<ResponseApiDto?> DeleteToAdmin(string identificador)
+        {
+            var response = new ResponseApiDto();
+
+            var user = await _userRepository.ByIdentifier(identificador);
+            if (user == null)
+            {
+                response.Result = false;
+                response.Message = "El usuario no existe.";
+            }
+            else
+            {
+                var responseDelete = await _userRepository.Delete(user);
+                if (responseDelete == 1)
+                {
+                    response.Result = true;
+                }
+                else
+                {
+                    response.Result = false;
+                    response.Message = "Ocurrio un error inesperado al eliminar el usuario.";
+                }
+            }
+
+            return response;
+        }
+
         public async Task<List<UsuarioDto>?> All()
         {
             return await _userRepository.All();

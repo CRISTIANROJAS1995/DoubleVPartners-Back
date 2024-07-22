@@ -20,7 +20,7 @@ namespace API.Controllers
 
         [Authorize(Roles = "Administrador")]
         [HttpGet]
-        [Route("AllRole")]
+        [Route("Rols")]
         [ProducesResponseType(200, Type = typeof(List<RolDto>))]
         [ProducesResponseType(400)]
         public async Task<IActionResult> AllRole()
@@ -31,7 +31,7 @@ namespace API.Controllers
 
         [Authorize]
         [HttpGet]
-        [Route("AllStateTask")]
+        [Route("TaskStatus")]
         [ProducesResponseType(200, Type = typeof(List<EstadoTareaDto>))]
         [ProducesResponseType(400)]
         public async Task<IActionResult> AllStateTask()

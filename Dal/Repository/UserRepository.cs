@@ -37,6 +37,12 @@ namespace Dal.Repository
             return await _context.SaveChangesAsync();
         }
 
+        public async Task<int?> Delete(Usuario model)
+        {
+            _context.Remove(model);
+            return await _context.SaveChangesAsync();
+        }
+
         public async Task<List<UsuarioDto>?> All()
         {
             List<UsuarioDto> response = new List<UsuarioDto>();

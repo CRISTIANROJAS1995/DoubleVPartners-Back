@@ -84,7 +84,7 @@ namespace API.Controllers
 
         [Authorize(Roles = "Administrador")]
         [HttpPut]
-        [Route("UpdateToAdmin")]
+        [Route("Admin/Update")]
         [ProducesResponseType(200)]
         [ProducesResponseType(400)]
         [ProducesResponseType(500)]
@@ -101,6 +101,27 @@ namespace API.Controllers
             }
 
             return Ok(await _userService.UpdateToAdmin(request));
+        }
+
+        [Authorize(Roles = "Administrador")]
+        [HttpDelete]
+        [Route("Admin/Delete")]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(500)]
+        public async Task<IActionResult> DeleteToAdmin([FromBody] UsuarioEliminarInput request)
+        {
+            if (request == null)
+            {
+                return BadRequest(ModelState);
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            return Ok(await _userService.DeleteToAdmin(request.Identificador!));
         }
 
         [Authorize]
