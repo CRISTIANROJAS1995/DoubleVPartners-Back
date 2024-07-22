@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Domain.Input
+namespace Domain.Input.User
 {
     public class UsuarioInput
     {

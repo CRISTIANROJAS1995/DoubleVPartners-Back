@@ -6,6 +6,7 @@ using System.Net;
 using System.Security.Claims;
 using Domain.Input;
 using Domain.Dtos;
+using Domain.Input.User;
 
 namespace API.Controllers
 {

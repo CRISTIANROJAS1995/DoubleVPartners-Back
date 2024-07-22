@@ -1,5 +1,4 @@
-﻿
-namespace Domain.Input
+﻿namespace Domain.Input.User
 {
     public class UsuarioActualizarInput
     {

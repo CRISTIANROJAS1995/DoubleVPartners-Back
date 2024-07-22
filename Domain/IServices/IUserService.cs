@@ -3,6 +3,7 @@ using Domain.Dtos.Generic;
 using Domain.Entities;
 using Domain.Extension;
 using Domain.Input;
+using Domain.Input.User;
 
 namespace Domain.IServices
 {
